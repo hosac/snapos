@@ -1,0 +1,6 @@
+# defaults file for snapserver
+
+# start snapserver automatically?
+START_SNAPSERVER=true
+
+SNAPSERVER_OPTS=""

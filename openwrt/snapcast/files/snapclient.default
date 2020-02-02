@@ -1,0 +1,6 @@
+# defaults file for snapclient
+
+# start snapclient automatically?
+START_SNAPCLIENT=true
+
+SNAPCLIENT_OPTS=""
