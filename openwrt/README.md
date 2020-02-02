@@ -17,21 +17,26 @@ Clone OpenWrt to some place in your home directory (`<wrt dir>`)
 
     $ git clone https://git.lede-project.org/source.git
 
-### Download and install available feeds 
 
-```
-$ cd <wrt dir>
-$ ./scripts/feeds update -a
-$ ./scripts/feeds install -a
-```
 
-### Add snapcast
+
+### Option1: add snapcast to local filesystem
 Within the `<wrt dir>/package` directory create a symbolic link to `<snapos dir>/openwrt`: 
 
-```
-$ cd <wrt dir>
-$ ln -s <snapos dir>/openwrt package/snapos
-```
+	$ cd <wrt dir>
+	$ ln -s <snapos dir>/openwrt package/snapos
+	
+### Option2: add snapcast to feeds
+Add the github repository to <wrt dir>/feeds.conf
+
+	src-git snapos https://github.com/badaix/snapos.git	# or an alternative repository
+
+### Download and install available feeds 
+
+	$ cd <wrt dir>
+	$ ./scripts/feeds update -a
+	$ ./scripts/feeds install -a
+
 
 ### Build  
 In `make menuconfig` navigate to `Multimedia/snapcast` and select `snapserver` and/or `snapclient`
